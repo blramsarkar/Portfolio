@@ -322,6 +322,20 @@
     z-index: 100;
   }
 
+  html { scroll-behavior: smooth; }
+
+  .mnav {
+    text-decoration: none;
+    color: var(--mac-black);
+    font-size: 13px;
+    font-weight: bold;
+    padding: 0 4px;
+    cursor: pointer;
+    font-family: 'Share Tech Mono', monospace;
+  }
+  .mnav:hover { background: var(--mac-black); color: white; }
+  .mnav.active { background: var(--mac-black); color: white; }
+
   ::-webkit-scrollbar { width: 16px; }
   ::-webkit-scrollbar-track { background: var(--mac-white); border-left: 2px solid var(--mac-black); }
   ::-webkit-scrollbar-thumb { background: var(--mac-black); border: 3px solid var(--mac-white); }
@@ -362,33 +376,30 @@
 
 <!-- MENUBAR -->
 <div class="menubar">
-  <span class="apple"></span>
-  <span>File</span>
-  <span>Edit</span>
-  <span>View</span>
-  <span>Portfolio</span>
-  <span>Contact</span>
-  <span>Help</span>
+  <span class="apple">🍎</span>
+  <a class="mnav" href="#home">Home</a>
+  <a class="mnav" href="#projects">Projects</a>
+  <a class="mnav" href="#skills">Skills</a>
+  <a class="mnav" href="#education">Education</a>
+  <a class="mnav" href="#contact">Contact</a>
   <span class="clock" id="clock">⏰ Loading...</span>
 </div>
 
 <div class="desktop">
 
   <!-- ── HERO ── -->
-  <div class="window" style="opacity:0;transform:translateY(-8px);transition:all 0.25s 0.05s">
+  <div id="home" class="window" style="opacity:0;transform:translateY(-8px);transition:all 0.25s 0.05s">
     <div class="titlebar">
       <div class="stripes"></div>
       <div class="close-box" onclick="toggleWin(this)">✕</div>
-      <div class="win-title">Balaram_Sarkar.profile</div>
+      <div class="win-title"> Balaram_Sarkar.profile</div>
     </div>
     <div class="win-body">
       <div class="hero-layout">
         <div>
           <div class="avatar-frame" id="avatar-frame">
-            <div class="avatar-frame" id="avatar-frame">
     <img src="profile.jpg" alt="Profile Photo" class="avatar-img">
 </div>
-          </div>
           
           <div style="margin-top:10px;">
             
@@ -400,10 +411,11 @@
           <div class="hero-name">BALARAM SARKAR</div>
           <div class="hero-tagline">
             B.Tech Computer Science & Engineering · NIT Rourkela<br>
-            AI/ML Engineer · Agentic Systems
+            AI/ML Engineer · Full-Stack Developer · Agentic Systems
           </div>
           <div class="hero-bio">
-I'm a Computer Science undergrad at NIT Rourkela with a passion for building intelligent systems and clean web applications. From architecting multi-agent AI pipelines to crafting React apps with robust state management.          </div>
+       I'm a Computer Science undergrad at NIT Rourkela with a passion for building intelligent systems and clean web applications. From architecting multi-agent AI pipelines to crafting React apps with robust state management.          </div>
+          </div>
 
           <div class="contact-chips">
             <a class="chip" href="mailto:balaramsarkar1508@gmail.com">📧 balaramsarkar1508@gmail.com</a>
@@ -421,7 +433,7 @@ I'm a Computer Science undergrad at NIT Rourkela with a passion for building int
   </div>
 
   <!-- ── PROJECTS ── -->
-  <div class="window" style="opacity:0;transform:translateY(-8px);transition:all 0.25s 0.15s">
+  <div id="projects" class="window" style="opacity:0;transform:translateY(-8px);transition:all 0.25s 0.15s">
     <div class="titlebar">
       <div class="stripes"></div>
       <div class="close-box" onclick="toggleWin(this)">✕</div>
@@ -445,7 +457,7 @@ I'm a Computer Science undergrad at NIT Rourkela with a passion for building int
             <span class="tech-tag">🎈 Streamlit</span>
             <span class="tech-tag">🍜 BeautifulSoup</span>
           </div>
-          <ul class="bullet-list">
+         <ul class="bullet-list">
             <li>Autonomous AI pipeline with four specialized agents — Search, Reader, Writer, Critic — using LangChain and LangGraph's ReAct framework. Integrates Tavily web search and a custom BeautifulSoup scraper for real-time information retrieval. Produces scored research reports with quantitative evaluation and improvement feedback..</li>
           </ul>
           <div class="proj-links">
@@ -482,7 +494,7 @@ I'm a Computer Science undergrad at NIT Rourkela with a passion for building int
   </div>
 
   <!-- ── SKILLS ── -->
-  <div class="window" style="opacity:0;transform:translateY(-8px);transition:all 0.25s 0.25s">
+  <div id="skills" class="window" style="opacity:0;transform:translateY(-8px);transition:all 0.25s 0.25s">
     <div class="titlebar">
       <div class="stripes"></div>
       <div class="close-box" onclick="toggleWin(this)">✕</div>
@@ -538,7 +550,7 @@ I'm a Computer Science undergrad at NIT Rourkela with a passion for building int
   </div>
 
   <!-- ── EDUCATION ── -->
-  <div class="window" style="opacity:0;transform:translateY(-8px);transition:all 0.25s 0.35s">
+  <div id="education" class="window" style="opacity:0;transform:translateY(-8px);transition:all 0.25s 0.35s">
     <div class="titlebar">
       <div class="stripes"></div>
       <div class="close-box" onclick="toggleWin(this)">✕</div>
@@ -587,7 +599,9 @@ I'm a Computer Science undergrad at NIT Rourkela with a passion for building int
   </div>
 
   <!-- ── LEADERSHIP ── -->
-<!--  <div class="window" style="opacity:0;transform:translateY(-8px);transition:all 0.25s 0.45s">
+
+  <!--
+  <div class="window" style="opacity:0;transform:translateY(-8px);transition:all 0.25s 0.45s">
     <div class="titlebar">
       <div class="stripes"></div>
       <div class="close-box" onclick="toggleWin(this)">✕</div>
@@ -623,10 +637,9 @@ I'm a Computer Science undergrad at NIT Rourkela with a passion for building int
       </div>
     </div>
   </div>
-  -->
-
+ -->
   <!-- ── CONTACT / GET IN TOUCH ── -->
-  <div class="window" style="opacity:0;transform:translateY(-8px);transition:all 0.25s 0.55s">
+  <div id="contact" class="window" style="opacity:0;transform:translateY(-8px);transition:all 0.25s 0.55s">
     <div class="titlebar">
       <div class="stripes"></div>
       <div class="close-box" onclick="toggleWin(this)">✕</div>
@@ -636,7 +649,7 @@ I'm a Computer Science undergrad at NIT Rourkela with a passion for building int
       <div class="sec-title">▣ CONNECT WITH ME</div>
 
       <div class="social-grid">
-        <a class="social-card" href="https://linkedin.com/in/balaram-sarkar" target="_blank">
+        <a class="social-card" href="https://www.linkedin.com/in/balaram-sarkar-a13970306/" target="_blank">
           <div class="social-icon">💼</div>
           <div class="social-label">LinkedIn</div>
           <div class="social-handle">balaram-sarkar</div>
@@ -661,7 +674,7 @@ I'm a Computer Science undergrad at NIT Rourkela with a passion for building int
           <div class="social-label">X (Twitter)</div>
           <div class="social-handle">@GargandiS</div>
         </a>
-        <a class="social-card" href="https://www.facebook.com/dwip.sarkar.982" target="_blank">
+         <a class="social-card" href="https://www.facebook.com/dwip.sarkar.982" target="_blank">
           <div class="social-icon">🔵</div>
           <div class="social-label">Facebook</div>
           <div class="social-handle"></div>
@@ -670,8 +683,8 @@ I'm a Computer Science undergrad at NIT Rourkela with a passion for building int
 
       <div class="contact-form-note">
         <strong>📨 Open to Opportunities</strong><br><br>
-        I am actively seeking internship and project collaboration opportunities in the domains of AI/ML engineering, and agentic systems research. Whether you have a role, a project idea, or simply want to connect — feel free to reach out via <a href="mailto:balaramsarkar1508@gmail.com">email</a> or any of the platforms above.<br><br>
-       
+        I am actively seeking internship and project collaboration opportunities in the domains of AI/ML engineering, full-stack development, and agentic systems research. Whether you have a role, a project idea, or simply want to connect — feel free to reach out via <a href="mailto:balaramsarkar1508@gmail.com">email</a> or any of the platforms above.<br><br>
+        
       </div>
     </div>
   </div>
@@ -681,7 +694,7 @@ I'm a Computer Science undergrad at NIT Rourkela with a passion for building int
 
 <!-- FOOTER -->
 <div class="footer">
-   &nbsp; Balaram Sarkar Portfolio &nbsp;·&nbsp; System 7.5 &nbsp;·&nbsp; NIT Rourkela, 2026 &nbsp;·&nbsp; 640K RAM Free
+  💾 &nbsp; Balaram Sarkar Portfolio &nbsp;·&nbsp; System 7.5 &nbsp;·&nbsp; NIT Rourkela, 2026 &nbsp;·&nbsp; 640K RAM Free
 </div>
 
 <script>
@@ -692,6 +705,31 @@ function updateClock() {
     now.toLocaleTimeString('en-US', {hour:'2-digit', minute:'2-digit'});
 }
 updateClock(); setInterval(updateClock, 1000);
+
+// Active nav highlight on scroll
+const sections = ['home','projects','skills','education','contact'];
+const navLinks = document.querySelectorAll('.mnav');
+function onScroll() {
+  let current = 'home';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 60) current = id;
+  });
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+}
+window.addEventListener('scroll', onScroll, {passive: true});
+onScroll();
+
+// Smooth scroll offset for sticky menubar
+document.querySelectorAll('.mnav').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) window.scrollTo({ top: target.offsetTop - 28, behavior: 'smooth' });
+  });
+});
 
 // Animate windows on load
 document.querySelectorAll('.window').forEach(w => {
